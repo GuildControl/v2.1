@@ -1,3 +1,19 @@
+<script>
+  window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 1000);
+  }
+</script>
+
+<div class="preloader">
+  <div class="preloader__row">
+    <div class="preloader__item"><div class="load__row"><div class="load__item"></div></div></div>
+  </div>
+</div>
+
 <div class="site_content">
 <div class="left_menu">
   <div class="logo"><img class="logo_min" src="https://cdn.discordapp.com/attachments/560178243609821204/896821419424493629/GuildControl_.png"></div>
@@ -48,6 +64,75 @@ document.getElementById(pages[page_num]).classList.remove("hidden");
 </script>
 
 <script src="https://kit.fontawesome.com/d6fd39dd8a.js" crossorigin="anonymous"></script>
+
+<stlye>
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1b29;
+  z-index: 1001;
+}
+.preloader__row{
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.preloader__item {
+  display: inline-block;
+  position: absolute;
+  border: 5px solid #fff;
+  border-radius: 6px;
+  position: absolute;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  left: -55px;
+  top: -40px;
+  animation: rotate 5s ease-in-out infinite;
+  
+}
+.load__row{
+position: relative;
+}
+.load__item{
+width: 100%;
+height: 10%;
+background: #fff;
+animation: progress 5s ease-in-out infinite;
+}
+
+@keyframes progress {
+ 0% { height: 0%; }
+ 10% { height: 0%;}
+ 40% { height: 100%; }
+ 60% { height: 100%; }
+ 90 {height: 0%; }
+ 100% { height: 0%; }
+}
+
+@keyframes rotate {
+ 0% { transform: rotate(90deg); }
+ 40% { transform: rotate(180deg); }
+ 60% { transform: rotate(270deg); }
+ 100% { transform: rotate(360deg);}
+}
+
+.loaded_hiding .preloader {
+  transition: 1s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+</stlye>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap');
