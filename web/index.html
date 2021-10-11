@@ -1,0 +1,156 @@
+<div class="site_content">
+<div class="left_menu">
+  <div class="logo"><img class="logo_min" src="https://cdn.discordapp.com/attachments/560178243609821204/896821419424493629/GuildControl_.png"></div>
+  <div class="buttons_content">
+    <button onClick="show_page(0)"><div class="icon"><i class="fa-solid fa-book-open-reader"></i></div><span class="linear_text">Мой профиль</span></button>
+    <button onClick="show_page(1)"><div class="icon"><i class="fa-brands fa-black-tie"></i></div><span class="linear_text">Моя гильдия</span></button>
+    <button onClick="show_page(2)"><div class="icon"><i class="fa-solid fa-ethernet"></i></div><span class="linear_text">ТОП-10</span></button>
+    <button onClick="show_page(3)"><div class="icon"><i class="fa-solid fa-hat-cowboy"></i></div><span class="linear_text">ЧЛЕН</span></button>
+  </div>
+  <div class="mini_profile">
+    <div class="mini_profile_avatar">
+      <img src="" class="avatar_min">
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div id="p_prof" class="page">
+    <div class="page_name">Мой Профиль</div>
+    <div class="content_panel">lol</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>kek</div>
+  </div>
+    <div id="p_guild" class="page hidden">
+    <div class="page_name">Моя гильдия</div>
+    <div class="content_panel">Тут будет информация о твоей гильдии</div>
+  </div>
+    <div id="p_top10" class="page hidden">
+    <div class="page_name">ТОП-10</div>
+    <div class="content_panel">Тут будет информация о ТОП 10 гильдиях</div>
+  </div>
+    <div id="p_chlen" class="page hidden">
+    <div class="page_name">Член</div>
+    <div class="content_panel">Тут будет информация о члене</div>
+  </div>
+</div>
+ 
+</div>
+
+<script>var pages = ["p_prof","p_guild","p_top10","p_chlen"];
+var pages_count = pages.length;
+
+function show_page(page_num){
+for(var i=0;i<pages_count;i++){
+document.getElementById(pages[i]).classList.add("hidden");
+}
+document.getElementById(pages[page_num]).classList.remove("hidden");
+}
+
+</script>
+
+<script src="https://kit.fontawesome.com/d6fd39dd8a.js" crossorigin="anonymous"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+padding:0;
+margin:0;
+font-family: 'Commissioner', sans-serif;
+}
+body{
+background: #0f1117;
+}
+.left_menu{
+display: table-cell;
+position:relative;
+width: 270px;
+height:100%;
+}
+.logo{
+display: flex;
+justify-content: space-around;
+}
+.logo_min{
+width: 200px;
+padding-top: 5px;
+}
+
+.site_content {
+position: absolute;
+display: table;
+width: 100%;
+height: 100%;
+
+}
+
+button {
+width: 100%;
+background: rgba(0,0,0,0);
+border: none;
+padding: 20px 30px;
+text-transform: uppercase;
+display: flex;
+font-size: 16px;
+font-weight: 600;
+align-content: stretch;
+flex-wrap: nowrap;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+}
+button:hover{
+background: rgba(0,0,0,0.5)
+}
+.buttons_content{
+  top:10%;
+  position:relative;
+  width:100%;
+}
+.icon{
+zoom:1.4;
+margin-right: 15px;
+background: linear-gradient(319deg, rgba(255,49,72,1) 0%, rgba(255,160,0,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.linear_text{
+background: linear-gradient(319deg, rgba(255,49,72,1) 0%, rgba(255,160,0,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.content {
+display: table-cell;
+position: relative;
+right: 0;
+}
+.page_name{
+color: #fff;
+font-weight: 600;
+font-size:24px;
+position: absolute;
+padding: 10px 30px;
+top: 30px;
+}
+
+.hidden{
+position:absolute;
+opacity:0;
+width:0px;
+height: 0% !important;
+overflow:hidden;
+}
+.content_panel{
+position: absolute;
+color:#fff;
+overflow: auto;
+}
+.mini_profile{
+position: absolute;
+width:100%;
+height:90px;
+background: rgba(0,0,0,0.3);
+border-top-right-radius:20px;
+bottom:0;
+}
+</style>
